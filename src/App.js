@@ -22,11 +22,25 @@ const Traffic_report = () => {
     });
   }, []);
 
+  const flight_Btn = () => {
+    window.location.href = "http://localhost:3001/";
+  }
+
   return (
-    <div
-      id="map"
-      style={{ width: "100%", height: "100%", border: "1px solid black" }}
-    ></div>
+    <div>
+      <div
+        id="map"
+        style={{ width: "100%", height: "100%", border: "1px solid black" }}
+      ></div>
+        <button onClick={flight_Btn}
+        style={{
+          position: "absolute",
+          top: 10,
+          left: 10,
+          zIndex: 1000,
+          padding: "10px 20px",
+        }}>항공</button>
+    </div>
   );
 };
 
