@@ -13,10 +13,12 @@ const Traffic_report = () => {
     kakao.maps.load(() => {
       const container = document.getElementById("map");
       const options = {
-        center: new kakao.maps.LatLng(36.74855, 129.538207), 
+        center: new kakao.maps.LatLng(35.74855, 129.538207), 
         level: 12
       };
       mapRef.current = new kakao.maps.Map(container, options);
+
+      mapRef.current.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
     });
   }, []);
 
