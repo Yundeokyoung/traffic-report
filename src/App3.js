@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-// 선박 아이콘
 const shipIcon = new L.Icon({
   iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
   iconSize: [30, 30],
@@ -15,19 +14,17 @@ const ShipTracker = () => {
   useEffect(() => {
     const fetchShips = async () => {
       try {
-        // API KEY 없이 접근 가능한 공개 JSON
         const response = await fetch(
           "https://raw.githubusercontent.com/vega/vega-datasets/master/data/airports.json"
         );
         const data = await response.json();
 
-        // lat/lon 필드가 있는 데이터만 선박처럼 사용
         const sampleShips = data.slice(0, 20).map((item, index) => ({
           id: index,
           name: item.name,
           lat: item.latitude,
           lon: item.longitude,
-          speed: Math.floor(Math.random() * 20) + 5, // 임의 속도
+          speed: Math.floor(Math.random() * 20) + 5,
           destination: "Unknown",
         }));
 
