@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 const markers = L.markerClusterGroup();
 
 const planeIcon = L.icon({
-  iconUrl: 'https://cdn-icons-png.flaticon.com/512/190/190601.png',
+  iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
   iconSize: [25, 25],
 });
 

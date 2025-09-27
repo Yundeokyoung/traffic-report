@@ -19,31 +19,40 @@ const TrafficReport = () => {
         level: 12,
       };
       mapRef.current = new kakao.maps.Map(container, options);
+
+      // 교통정보 레이어 추가
       mapRef.current.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
     });
   }, []);
 
   return (
-    <div style={{ height: "100vh", position: "relative" }}>
+    <div style={{ height: "100vh", width: "100vw", position: "relative" }}>
       <div
         id="map"
-        style={{ width: "100%", height: "100%", border: "1px solid black" }}
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "absolute", 
+          top: 0,
+          left: 0,
+        }}
       ></div>
 
       <button
-        onClick={() => navigate("/App2")}
+        onClick={() => navigate("/flight")}
         style={{
-          position: "absolute",
-          top: 10,
-          left: 10,
-          zIndex: 9999, 
+          position: "fixed",
+          top: "20px",
+          left: "20px",
+          zIndex: 99999, 
           padding: "10px 20px",
           backgroundColor: "white",
           border: "1px solid #333",
-          cursor: "pointer"
+          borderRadius: "6px",
+          cursor: "pointer",
         }}
       >
-        항공 지도
+        항공
       </button>
     </div>
   );
